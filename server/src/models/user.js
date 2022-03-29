@@ -27,17 +27,17 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    password: {
-        type: String,
-        required: true,
-        minlength: 7,
-        trim: true,
-        validate(value) {
-            if(value.toLowerCase().includes('password')) {
-                throw new Error('Please try a stronger password')
-            }
-        }
-    },
+    // password: {
+    //     type: String,
+    //     required: true,
+    //     minlength: 7,
+    //     trim: true,
+    //     validate(value) {
+    //         if(value.toLowerCase().includes('password')) {
+    //             throw new Error('Please try a stronger password')
+    //         }
+    //     }
+    // },
     tokens: [{
         tokens: {
             type: String,
@@ -83,6 +83,16 @@ userSchema.statics.findByCredentials = async (email, password) => {
 
     if(!isMatch) {
         throw new Error('Unable to login')
+    }
+
+    return user
+}
+
+userSchema.statics.findByWalletAddress = async (walletAddress) => {
+    const user = await User.findOne({ walletAddress })
+
+    if(!user) {
+        throw new Error("Unable to login ")
     }
 
     return user
