@@ -27,17 +27,17 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    // password: {
-    //     type: String,
-    //     required: true,
-    //     minlength: 7,
-    //     trim: true,
-    //     validate(value) {
-    //         if(value.toLowerCase().includes('password')) {
-    //             throw new Error('Please try a stronger password')
-    //         }
-    //     }
-    // },
+    password: {
+        type: String,
+        required: true,
+        minlength: 7,
+        trim: true,
+        validate(value) {
+            if(value.toLowerCase().includes('password')) {
+                throw new Error('Please try a stronger password')
+            }
+        }
+    },
     tokens: [{
         tokens: {
             type: String,
@@ -116,5 +116,7 @@ userSchema.pre('remove', async function(next) {
     await CarbonData.deleteMany({ owner: user._id })
     next()
 }) 
+
+const User = mongoose.model('User', userSchema)
 
 module.exports = User
