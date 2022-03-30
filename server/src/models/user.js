@@ -47,6 +47,11 @@ const userSchema = new mongoose.Schema({
 })
 
 //Referencing social media data
+userSchema.virtual('feedData', {
+    ref: 'FeedData', 
+    localField: '_id',
+    foreignField: 'owner'
+})
 
 //Token Generation
 userSchema.methods.generateAuthToken = async function () {
