@@ -1,36 +1,35 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.12;
+pragma solidity >=0.4.17 <0.9.0;
 import './Token.sol';
 
 contract Tip{
-    Token public token;
-    string public name="Tip";
+   
+    //string public name= "Tip";
     address owner;
+    Token public token;
+    
 
-    constructor() {
+    constructor(Token _token){
+        token=_token;
         owner=msg.sender;
     }
-    event TipSuccess(
+    event TipSuccess (
         address tip_to,
         address tipper,
         uint amount
         );
 
-    function tip(address _tip_to,address tipper, uint _amount) public onlyOwner(tipper) returns(bool success){
 
-        if (token.transfer(_tip_to, _amount)== true){
-            success=true;
-            emit TipSuccess(_tip_to,tipper,_amount);
-        }
-        else{
-            success=false;
-        }
+    function tipper(address reciever, uint _amount) payable public returns(bool success){
+
+        token.transfer(reciever, _amount);
+        success=true;
 
     }
-    modifier onlyOwner(address tipper){
-        require(tipper==owner);
-        _;
-    }
+    // modifier onlyOwner(address tipper){
+    //     require(tipper==owner);
+    //     _;
+    // }
     
 }
 
