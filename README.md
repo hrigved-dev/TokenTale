@@ -18,7 +18,7 @@ A social media app which could fetch and verify the user’s NFTs before allowin
 
 **Blockchain:** Ethereum
 
-**Programming Languages:** Python, Dart
+**Programming Languages:** JavaScript, Solidity
 
 
 ## Abstract
