@@ -10,6 +10,9 @@ const feedDataSchema = new mongoose.Schema({
     creator: {
         type: String,
     },
+    walletAddress: {
+        type: String
+    },
     tags: [{
         type: String
     }],

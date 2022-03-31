@@ -1,8 +1,8 @@
 pragma solidity ^0.5.0;
 
 contract Token {
-    string  public name = "PSP Token";
-    string  public symbol = "PSP";
+    string  public name = "TokenTale";
+    string  public symbol = "TT";
     uint256 public totalSupply = 1000000000000000000000000; // 1 million tokens
     uint8   public decimals = 18;
 
@@ -39,7 +39,7 @@ contract Token {
         return true;
     }
 
-    function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {
+    function Tip(address _from, address _to, uint256 _value) public returns (bool success) {
         require(_value <= balanceOf[_from]);
         require(_value <= allowance[_from][msg.sender]);
         balanceOf[_from] -= _value;
