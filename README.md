@@ -1,7 +1,7 @@
 
 # TokenTale
 
-![Logo](src/logo.png)
+![Logo](src/images/logo.png)
 
 A social media app which could fetch and verify the user’s NFTs before allowing him to make a post, a user cannot post something that he doesn’t own hence a proof of authenticity.
 
