@@ -59,10 +59,20 @@
 
 import React from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
-import tokentale from './images/logo.png';
+import Web3 from 'web3'
+import tokentale from './images/mainLogo1.png';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 import useStyles from './styles'
+import Login from './components/Login/Login';
+
+// function App() {
+//   return (
+//     <div className='App'>
+//       <Login/>
+//     </div>
+//   )
+// }
 
 const App = () => {
   const classes = useStyles();
