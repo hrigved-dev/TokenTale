@@ -32,6 +32,10 @@ A social media app which could fetch and verify the user’s NFTs before allowin
 ## Screenshots
 
 <!-- ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here) -->
+![1](output/1.jpeg)
+![2](output/3.jpeg)
+![3](output/2.jpeg)
+![4](output/4.jpeg)
 
 
 
